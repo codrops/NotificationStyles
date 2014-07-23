@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Notification Styles Inspiration | Growl-Style Slide In</title>
+		<meta name="description" content="Various styles and effects for unobtrusive notifications on a website" />
+		<meta name="keywords" content="notification, inspiration, style, effect, growl, javascript" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link href="http://fonts.googleapis.com/css?family=Raleway:400,300,700" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/ns-default.css" />
+		<link rel="stylesheet" type="text/css" href="css/ns-style-growl.css" />
+		<script src="js/modernizr.custom.js"></script>
+		<!--[if IE]>
+  		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body class="color-2">
+		<div class="container">
+			<!-- Top Navigation -->
+			<div class="codrops-top clearfix">
+				<a class="codrops-icon codrops-icon-prev" href="http://tympanus.net/Development/SelectInspiration/"><span>Previous Demo</span></a>
+				<a class="codrops-icon codrops-icon-drop" href="http://tympanus.net/codrops/?p=19415"><span>Back to the Codrops Article</span></a>
+			</div>
+			<header class="codrops-header">
+				<h1>Notification Styles Inspiration <span>Simple ideas &amp; effects for website notifications</span></h1>
+			</header>
+			<div class="main clearfix">
+				<div class="column">
+					<p class="small">Click on the button to show the notification:</p>
+					<button id="notification-trigger" class="progress-button">
+						<span class="content">Show Notification</span>
+						<span class="progress"></span>
+					</button>
+				</div>
+				<div class="column">
+					<nav class="codrops-demos">
+						<h3>Growl-like</h3>
+						<div>
+							<a href="index.html">Scale</a>
+							<a href="growl-jelly.html">Jelly</a>
+							<a class="current-demo" href="growl-slide.html">Slide in</a>
+							<a href="growl-genie.html">Genie</a>
+						</div>
+						<h3>Attached</h3>
+						<div>
+							<a href="attached-flip.html">Flip</a>
+							<a href="attached-bouncyflip.html">Bouncy Flip</a>
+						</div>
+						<h3>Top Bar</h3>
+						<div>
+							<a href="bar-slidetop.html">Slide On Top</a>
+
+							<a href="bar-exploader.html">Expanding Loader</a>
+						</div>
+						<h3>Other</h3>
+						<div>
+							<a href="other-cornerexpand.html">Corner Expand</a>
+							<a href="other-loadingcircle.html">Loading Circle</a>
+							<a href="other-boxspinner.html">Box Spinner</a>
+							<a href="other-thumbslider.html">Thumb Slider</a>
+						</div>
+					</nav>
+				</div>
+			</div>
+			<!-- Related demos -->
+			<section class="related">
+				<p>If you enjoyed this demo you might also like:</p>
+				<a href="http://tympanus.net/Development/ProgressButtonStyles/">
+					<img src="http://tympanus.net/codrops/wp-content/uploads/2013/12/ProgressButtonStyles-300x162.png" />
+					<h3>Progress Button Styles</h3>
+				</a>
+				<a href="http://tympanus.net/Development/CreativeLoadingEffects/">
+					<img src="http://tympanus.net/codrops/wp-content/uploads/2013/09/CreativeLoadingEffects-300x162.png" />
+					<h3>Creative Loading Effects</h3>
+				</a>
+			</section>
+		</div><!-- /container -->
+		<script src="js/classie.js"></script>
+		<script src="js/notificationFx.js"></script>
+		<script>
+			(function() {
+				var bttn = document.getElementById( 'notification-trigger' );
+
+				// make sure..
+				bttn.disabled = false;
+
+				bttn.addEventListener( 'click', function() {
+					// simulate loading (for demo purposes only)
+					classie.add( bttn, 'active' );
+					setTimeout( function() {
+
+						classie.remove( bttn, 'active' );
+						
+						// create the notification
+						var notification = new NotificationFx({
+							message : '<p>This notification has slight elasticity to it thanks to <a href="http://bouncejs.com/">bounce.js</a>.</p>',
+							layout : 'growl',
+							effect : 'slide',
+							type : 'notice', // notice, warning or error
+							onClose : function() {
+								bttn.disabled = false;
+							}
+						});
+
+						// show the notification
+						notification.show();
+
+					}, 1200 );
+					
+					// disable the button (for demo purposes only)
+					this.disabled = true;
+				} );
+			})();
+		</script>
+	</body>
+</html>
