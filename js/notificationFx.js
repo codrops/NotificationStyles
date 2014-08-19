@@ -91,8 +91,8 @@
 
 		// dismiss after [options.ttl]ms
 		var self = this;
-		// checks to make sure ttl is not set to false in notification
-		if(this.options.ttl) {
+		
+		if(this.options.ttl) { // checks to make sure ttl is not set to false in notification initialization
 			this.dismissttl = setTimeout( function() {
 				if( self.active ) {
 					self.dismiss();
