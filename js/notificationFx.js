@@ -120,7 +120,8 @@
 		this.active = true;
 		classie.remove( this.ntf, 'ns-hide' );
 		classie.add( this.ntf, 'ns-show' );
-		this.options.onOpen();
+		if (typeof this.options.onOpen === 'function')
+			this.options.onOpen();
 	}
 
 	/**
@@ -135,7 +136,8 @@
 			classie.add( self.ntf, 'ns-hide' );
 			
 			// callback
-			self.options.onClose();
+			if (typeof self.options.onClose === 'function')
+				self.options.onClose();
 		}, 25 );
 
 		// after animation ends remove ntf from the DOM
