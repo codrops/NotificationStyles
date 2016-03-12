@@ -196,6 +196,8 @@ section {
 .codrops-demos a:hover,
 .codrops-demos a.current-demo {
 	background: rgba(0,0,0,0.2);
+	color: inherit;
+	border-color: initial;
 }
 
 .codrops-demos h3 {
@@ -209,12 +211,6 @@ section {
 
 .codrops-demos div:not(:first-child) h3 {
 	padding-top: 2em;
-}
-
-.codrops-demos a:hover,
-.codrops-demos a.current-demo {
-	color: inherit;
-	border-color: initial;
 }
 
 /* Main content */
