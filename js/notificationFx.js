@@ -146,7 +146,7 @@
 				if( ev.target !== self.ntf ) return false;
 				this.removeEventListener( animEndEventName, onEndAnimationFn );
 			}
-			self.options.wrapper.removeChild( this );
+			self.options.wrapper.removeChild( self.ntf );
 		};
 
 		if( support.animations ) {
