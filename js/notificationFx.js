@@ -79,6 +79,12 @@
 	NotificationFx.prototype._init = function() {
 		// create HTML structure
 		this.ntf = document.createElement( 'div' );
+		
+	        // move notification to wrapper instead of always top left corner
+	        var pos = this.options.wrapper.getBoundingClientRect();
+	        this.ntf.style.top = (pos.top + 30) +"px";
+	        this.ntf.style.left = (pos.left + 30) + "px";
+	
 		this.ntf.className = 'ns-box ns-' + this.options.layout + ' ns-effect-' + this.options.effect + ' ns-type-' + this.options.type;
 		var strinner = '<div class="ns-box-inner">';
 		strinner += this.options.message;
