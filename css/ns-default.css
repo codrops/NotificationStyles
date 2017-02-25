@@ -31,11 +31,6 @@
 	margin: 0;
 }
 
-.ns-box.ns-show,
-.ns-box.ns-visible {
-	pointer-events: auto;
-}
-
 .ns-close {
 	width: 20px;
 	height: 20px;
