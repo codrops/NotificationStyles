@@ -346,6 +346,17 @@
 	right: 1.8em;
 }
 
+.ns-effect-thumbslider.ns-show,
+.ns-effect-thumbslider.ns-hide {
+	-webkit-animation-duration: 1.3s;
+	        animation-duration: 1.3s;
+	-webkit-animation-name: empty;
+	        animation-name: empty;
+}
+
+@-webkit-keyframes empty {}
+@keyframes empty {}
+
 .ns-effect-thumbslider.ns-show .ns-close,
 .ns-effect-thumbslider.ns-hide .ns-close,
 .ns-effect-thumbslider.ns-show .ns-content p,
