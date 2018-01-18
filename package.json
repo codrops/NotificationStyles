@@ -1,0 +1,21 @@
+{
+  "name": "NotificationStyles",
+  "version": "1.0.0",
+  "description": "Various simple ideas and effects for unobtrusive notifications on a website.",
+  "keywords": [
+    "notification"
+  ],
+  "homepage": "https://tympanus.net/codrops/2014/07/23/notification-styles-inspiration/",
+  "author": "Codrops (http://www.codrops.com)",
+  "main": "./index.html",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codrops/NotificationStyles.git"
+  },
+  "bugs": {
+    "url": "https://github.com/codrops/NotificationStyles/issues"
+  },
+  "license": {
+    "url": "https://tympanus.net/codrops/licensing/"
+  }
+}
